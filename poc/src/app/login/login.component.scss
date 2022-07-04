@@ -1,0 +1,53 @@
+.content-container {
+  display: flex;
+  flex-direction: column;
+
+}
+
+.login-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  background: #e5e5ee;
+  padding: 2rem;
+
+
+  .login-banner {
+    flex: 1;
+
+    &>img {
+      object-fit: contain;
+      max-height: 75vh;
+      max-width: 100%;
+    }
+  }
+
+  .login-form-container {
+    flex: 1;
+    display: flex;
+
+    justify-content: center;
+
+    .login-form {
+      box-shadow: 3px 3px 32px rgb(0 0 0 / 19%);
+      background: #fff;
+      padding: 1.5rem 3.1875rem 1.5rem 3rem;
+      max-width: 50%;
+
+      & .form {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+      }
+
+    }
+
+    .login-header {
+      white-space: nowrap;
+    }
+
+  }
+
+}

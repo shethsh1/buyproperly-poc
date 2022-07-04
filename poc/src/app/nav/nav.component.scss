@@ -1,0 +1,36 @@
+.main-padding {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.header-container {
+  height: 4rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+
+  &__navigation {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+
+  }
+
+  &__account-menu {
+    list-style: none;
+    display: flex;
+    gap: 0.5rem;
+
+  }
+
+
+}
