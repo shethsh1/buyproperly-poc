@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit = () => {
-    console.log("ran")
     this.store.dispatch(login({ email: this.email, password: this.password }))
   }
 }

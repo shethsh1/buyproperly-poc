@@ -11,6 +11,9 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
+import { loginFailedReducer, loginVerifiedReducer } from './core/user/user.reducer';
+import { UserEffects } from './core/user/user.effects';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -27,8 +30,12 @@ import { StoreModule } from '@ngrx/store';
     AppRoutingModule,
     FormsModule,
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
-    EffectsModule.forRoot([]),
-    StoreModule.forRoot({})
+    EffectsModule.forRoot([UserEffects]),
+    StoreModule.forRoot({
+      loginVerify: loginVerifiedReducer,
+      loginFail: loginFailedReducer
+    }),
+    HttpClientModule
   ],
 
   providers: [],
