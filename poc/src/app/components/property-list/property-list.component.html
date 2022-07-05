@@ -1,42 +1,50 @@
 <div class="content-container">
 
   <div class="properties-container">
-
-    <div class="property-card">
-      <div class="preview-image">
-        <img 
-          alt="image"
-          src="https://buyproperly-common-ca.s3.ca-central-1.amazonaws.com/properties/prop_19_marmora/9_fky2w3.jpg"
-        >
-
-        <div class="address-area">
-          <h3>East Peterborough</h3>
-          <p>Crowe Valley Campgroud</p>
-        </div>
-        
-      </div>
-
-      
-
-      <div class="text-area">
     
-        <h2>Property</h2>
-        <div class="property-info">
-          <span class="col-title">Total Offering</span>
-          <span class="col-title">Project Term</span>
-          <span class="col-title">Projected Annual ROI</span>
-          <span class="col-val">$200,000</span>
-          <span class="col-val">3 years</span>
-          <span class="col-val">36.6%</span>
+
+    <ng-container *ngFor="let property of properties.data; let i = index">
+      <div class="property-card">
+        <div class="preview-image">
+          <img 
+            [alt]="i"
+            [src]="property.img_src_main"
+          >
+
+          <div class="address-area">
+            <h3>{{property.address_area}}</h3>
+            <p>{{property.property_card_subtitle}}</p>
+          </div>
+          
         </div>
-        <div class="button-container">
-          <button class="property-button">
-            Invest Now
-          </button>
+
+        
+
+        <div class="text-area">
+      
+          <h2>Property</h2>
+          <div class="property-info">
+            <span class="col-title">Total Offering</span>
+            <span class="col-title">Project Term</span>
+            <span class="col-title">Projected Annual ROI</span>
+            <span class="col-val">${{property.current_value}}</span>
+            <span class="col-val">{{property.total_term}}</span>
+            <span class="col-val">{{property.projected_annual_returns_min}}%</span>
+          </div>
+          <div class="button-container">
+            <button class="property-button" *ngIf="notAdvertisement(property.isAdvertisement)">
+              Invest Now
+            </button>
+            <button disabled class="property-button" *ngIf="notAdvertisement(!property.isAdvertisement)">
+              Coming soon
+            </button>
+          </div>
         </div>
+
       </div>
 
-    </div>
+
+    </ng-container>
 
 
   </div>

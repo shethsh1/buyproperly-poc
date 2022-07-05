@@ -25,8 +25,12 @@ export class PropertyListComponent implements OnInit {
 
   }
 
-  log(val: any) {
-    console.log(val)
+  notAdvertisement(val: boolean | null) {
+    if(val === true) {
+      return false
+    } else {
+      return true
+    }
   }
 
 }
