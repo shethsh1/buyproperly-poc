@@ -120,3 +120,20 @@
   }
 
 }
+
+
+.pages-container {
+  background: $grey-background;
+  text-align: center;
+  font-size: 1.5rem;
+
+  & > button {
+    margin: 1rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    margin-bottom: 3rem;
+    font-weight: 700;
+  }
+}

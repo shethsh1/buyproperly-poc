@@ -1,8 +1,8 @@
 <div class="content-container">
 
-  <div class="properties-container">
-    
 
+
+  <div class="properties-container">
     <ng-container *ngFor="let property of properties.data; let i = index">
       <div class="property-card">
         <div class="preview-image">
@@ -17,11 +17,7 @@
           </div>
           
         </div>
-
-        
-
         <div class="text-area">
-      
           <h2>Property</h2>
           <div class="property-info">
             <span class="col-title">Total Offering</span>
@@ -40,10 +36,13 @@
             </button>
           </div>
         </div>
-
       </div>
+    </ng-container>
+  </div>
 
-
+  <div class="pages-container">
+    <ng-container *ngFor="let page of numbers">
+      <button (click)="setPagination(page)" [disabled]="properties.page === page ? true : false">{{page}}</button>
     </ng-container>
 
 
