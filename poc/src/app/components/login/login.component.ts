@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store'
 import { login } from '../../core/user/user.actions'
+import { User } from 'src/app/core/user/user.state';
+
 
 @Component({
   selector: 'app-login',
@@ -12,10 +14,15 @@ export class LoginComponent implements OnInit {
   password: string = ''
 
 
-  constructor(private store: Store) {
+
+
+  constructor(private store: Store, private state: Store<{ LoginFail: User }>) {
+
+
   }
 
   ngOnInit(): void {
+
 
   }
 
