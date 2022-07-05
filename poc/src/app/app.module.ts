@@ -14,6 +14,8 @@ import { StoreModule } from '@ngrx/store';
 import { loginReducer } from './core/user/user.reducer';
 import { UserEffects } from './core/user/user.effects';
 import { HttpClientModule } from '@angular/common/http';
+import { PropertyEffects } from './core/properties/property.effects';
+import { propertiesReducer } from './core/properties/property.reducer';
 
 
 
@@ -29,9 +31,10 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    EffectsModule.forRoot([UserEffects]),
+    EffectsModule.forRoot([UserEffects, PropertyEffects]),
     StoreModule.forRoot({
       user: loginReducer,
+      properties: propertiesReducer
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     HttpClientModule

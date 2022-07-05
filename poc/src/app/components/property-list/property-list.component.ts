@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { fetchProperties } from 'src/app/core/properties/property.actions';
+import { Store } from '@ngrx/store'
+import { Properties } from 'src/app/core/properties/property.state';
 
 @Component({
   selector: 'app-property-list',
@@ -6,10 +9,24 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./property-list.component.scss']
 })
 export class PropertyListComponent implements OnInit {
+  properties: Properties = {
+    data: [],
+    totalCount: 0
+  };
 
-  constructor() { }
+
+  constructor(private store: Store<{ properties: Properties }>) { }
 
   ngOnInit(): void {
+    this.store.dispatch(fetchProperties({ limit: 10, offset: 0 }))
+    this.store.select('properties').subscribe((data) => {
+      this.properties = data
+    })
+
+  }
+
+  log(val: any) {
+    console.log(val)
   }
 
 }

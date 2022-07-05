@@ -1,4 +1,4 @@
-import { login, loginVerified, loginFailed } from './user.actions'
+import { loginVerified, loginFailed } from './user.actions'
 import { user } from './user.state'
 import { createReducer, on } from '@ngrx/store';
 
