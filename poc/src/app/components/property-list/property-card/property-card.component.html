@@ -1,0 +1,38 @@
+<div class="property-card">
+  <div class="preview-image">
+    <img 
+      [src]="property.img_src_main"
+    >
+
+    <div class="address-area">
+      <h3>{{property.address_area}}</h3>
+      <p>{{property.property_card_subtitle}}</p>
+    </div>
+    
+  </div>
+  <div class="text-area">
+    <h2>Property</h2>
+    <div class="property-info">
+      <span class="col-title">Total Offering</span>
+      <span class="col-title">Project Term</span>
+      <span class="col-title">Projected Annual ROI</span>
+      <span class="col-val">${{property.current_value}}</span>
+      <span class="col-val">{{property.total_term}}</span>
+      <span class="col-val">{{property.projected_annual_returns_min}}%</span>
+    </div>
+    <div class="button-container">
+      <button 
+        class="property-button" 
+        *ngIf="this.notAdvertisement(property.isAdvertisement)" 
+        (click)="this.setProperty(property.property_slurp)"
+        routerLink="/properties/{{property.property_slurp}}"
+        
+      >
+        Invest Now
+      </button>
+      <button disabled class="property-button" *ngIf="this.notAdvertisement(!property.isAdvertisement)">
+        Coming soon
+      </button>
+    </div>
+  </div>
+</div>

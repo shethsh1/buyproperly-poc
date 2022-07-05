@@ -16,6 +16,7 @@ import { UserEffects } from './core/user/user.effects';
 import { HttpClientModule } from '@angular/common/http';
 import { PropertyEffects } from './core/properties/property.effects';
 import { propertiesReducer } from './core/properties/property.reducer';
+import { PropertyCardComponent } from './components/property-list/property-card/property-card.component';
 
 
 
@@ -25,7 +26,8 @@ import { propertiesReducer } from './core/properties/property.reducer';
     LoginComponent,
     PropertyListComponent,
     PropertyDetailComponent,
-    NavComponent
+    NavComponent,
+    PropertyCardComponent,
   ],
   imports: [
     BrowserModule,
