@@ -18,11 +18,9 @@ export class UserEffects {
       switchMap((action) => {
         return this.apiService.verifyLogin(action.email, action.password).pipe(
           map((data) => {
-            console.log("success")
             return loginVerified()
           }),
           catchError((err) => {
-            console.log("error")
             return of(loginFailed())
           })
         )

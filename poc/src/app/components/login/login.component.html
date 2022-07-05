@@ -6,28 +6,24 @@
 
     <div class="login-form-container">
       <div class="login-form">
-
         <h2 class="login-header">Welcome back!</h2>
         <form class="form">
-
-          <input type="text" placeholder="email" [(ngModel)]="email" name="email" />
-          <input type="password" placeholder="password" [(ngModel)]="password" name="password">
+          <div class="form__input">
+            <label class="input-label">Email</label> <br />
+            <input type="text" placeholder="email" [(ngModel)]="email" name="email" />
+          </div>
+          <div class="form__input">
+            <label class="input-label">Password</label> <br />
+            <input type="password" placeholder="password" [(ngModel)]="password" name="password">
+          </div>
           {{email}}
           {{password}}
-
-          <button type="submit" (click)="onSubmit()">Login</button>
-
-
+          <div class="submit-button">
+            <button type="submit" (click)="onSubmit()">Login</button>
+          </div>
         </form>
-
       </div>
-
     </div>
-
   </div>
-
-
-
-
 
 </div>
