@@ -13,7 +13,6 @@ export class UserEffects {
 
   login$ = createEffect(() =>
     this.actions$.pipe(
-
       ofType(login),
       switchMap((action) => {
         return this.apiService.verifyLogin(action.email, action.password).pipe(

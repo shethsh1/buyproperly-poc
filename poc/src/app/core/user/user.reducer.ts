@@ -6,7 +6,7 @@ export const loginReducer = createReducer(
   user,
   on(loginVerified, (state, action) => {
     console.log("success")
-    return { ...state, verified: true }
+    return { ...state, verified: true, error: '' }
   }),
   on(loginFailed, (state, action) => {
     return { ...state, verified: false, error: 'Incorrect username or password' }
