@@ -22,5 +22,9 @@ export class ApiService {
     return this.http.post<Properties>(`https://alpha.buyproperly.ca/api/search/v1`, { limit, offset })
   }
 
+  fetchProperty(slurp : string): Observable<any> {
+    return this.http.get<any>(`https://alpha.buyproperly.ca/api/property/v1/details/slurp/${slurp}`)
+
+  }
 
 }

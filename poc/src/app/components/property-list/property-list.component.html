@@ -28,7 +28,12 @@
             <span class="col-val">{{property.projected_annual_returns_min}}%</span>
           </div>
           <div class="button-container">
-            <button class="property-button" *ngIf="notAdvertisement(property.isAdvertisement)">
+            <button 
+              class="property-button" 
+              *ngIf="notAdvertisement(property.isAdvertisement)" 
+              (click)="setProperty(property.property_slurp)"
+              routerLink="/properties/{{property.property_slurp}}"
+            >
               Invest Now
             </button>
             <button disabled class="property-button" *ngIf="notAdvertisement(!property.isAdvertisement)">
@@ -42,7 +47,12 @@
 
   <div class="pages-container">
     <ng-container *ngFor="let page of numbers">
-      <button (click)="setPagination(page)" [disabled]="properties.page === page ? true : false">{{page}}</button>
+      <button 
+        (click)="setPagination(page)" 
+        [disabled]="properties.page === page ? true : false" 
+      >
+        {{page}}
+      </button>
     </ng-container>
 
 

@@ -6,7 +6,8 @@
 
 export interface Properties {
   totalCount: number,
-  data: any[]
+  data: any[],
+  activeProperty ?: object
 
 }
 

@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { fetchProperties, fetchProperty } from 'src/app/core/properties/property.actions';
+import { Store } from '@ngrx/store'
+import { Properties } from 'src/app/core/properties/property.state';
+import { ActivatedRoute } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-property-detail',
@@ -6,10 +12,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./property-detail.component.scss']
 })
 export class PropertyDetailComponent implements OnInit {
-
-  constructor() { }
+  slurp : string | null = '';
+  propertyData : any 
+  constructor(private store: Store<{ properties: Properties }>, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-  }
-
+    this.slurp = this.activatedRoute.snapshot.paramMap.get('slurp')
+    if(this.slurp) {
+      this.store.dispatch(fetchProperty({ slurp: this.slurp }))
+      this.store.select('properties').subscribe((data) => {
+        this.propertyData = data.activeProperty
+      })
+    }
+  };
 }

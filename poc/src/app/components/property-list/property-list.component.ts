@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { fetchProperties } from 'src/app/core/properties/property.actions';
+import { fetchProperties, fetchProperty } from 'src/app/core/properties/property.actions';
 import { Store } from '@ngrx/store'
 import { Properties } from 'src/app/core/properties/property.state';
 
@@ -68,6 +68,10 @@ export class PropertyListComponent implements OnInit {
       this.properties.page = page
     })
 
+  }
+
+  setProperty(slurp : string) {
+    this.store.dispatch(fetchProperty({ slurp }))
   }
 
 

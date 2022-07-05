@@ -1,4 +1,12 @@
 @mixin respond($breakpoint) {
+
+  @if ($breakpoint == xl) {
+    @media screen and (max-width: 1536px) {
+      @content;
+    }
+  }
+
+
   @if ($breakpoint ==desktop) {
     @media screen and (max-width: 1200px) {
       @content;
