@@ -29,7 +29,7 @@
         routerLink="/properties/{{property.property_slurp}}"
         
       >
-        Invest Now
+        {{'Invest Now' | translate}}
       </button>
       <button disabled class="property-button" *ngIf="this.notAdvertisement(!property.isAdvertisement)">
         Coming soon
