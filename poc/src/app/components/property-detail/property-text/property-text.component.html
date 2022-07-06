@@ -1,0 +1,87 @@
+<div class="property-text">
+
+  <div class="header">
+    <span class="name">{{this.propertyData.address_area}}</span>
+    <div class="back" routerLink="/properties">
+      <img src="../../../../assets/left-arrow.svg">
+      <a>{{'Back to properties' | translate}}</a>
+    </div>
+  </div>
+
+  <div class="address-area">
+    <p>{{this.propertyData.address}}, {{this.propertyData.address_area}}, {{this.propertyData.province}}, {{this.propertyData.postal_code}}</p>
+  </div>
+
+  <div class="type-area">
+    <p class="title">{{'Industrial' | translate}}</p>
+    <div class="type-area-icon">
+      <p>{{'Primary Listing' | translate}}</p>
+      <img class="logo" src="../../../assets/info-icon.svg">
+    </div>
+
+
+  </div>
+
+  <div class="price-area">
+    <div class="price-box">
+      <div class="price-header">
+        <p>{{'Total Offering' | translate}}</p>
+        <img class="logo" src="../../../assets/info-icon.svg">
+      </div>
+
+      <div class="price-info">
+        ${{propertyData.purchase_price}}
+      </div>
+
+    </div>
+
+    <div class="price-box">
+      <div class="price-header">
+        <p>{{'Project Term' | translate}}</p>
+        <img class="logo" src="../../../assets/info-icon.svg">
+      </div>
+      <div class="price-info">
+        <span *ngIf="propertyData.total_term != null">{{propertyData.total_term}}</span>
+        <span *ngIf="propertyData.total_term == null">N/A</span>
+      </div>
+    </div>
+
+    <div class="price-box">
+      <div class="price-header">
+        <p>{{'Projected Annual ROI' | translate}}</p>
+        <img class="logo" src="../../../assets/info-icon.svg">
+      </div>
+
+      <div class="price-info">
+        {{propertyData.projected_annual_returns_min}}%
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="meeting-doc">
+    <div class="field">
+      <img src="../../../../assets/schedule.svg">
+      <span>{{'Book a meeting' | translate}}</span>
+      
+    </div>
+    <div class="field">
+      <img src="../../../../assets/document.svg">
+      <span>{{ 'Documents' | translate}}</span>
+    </div>
+  </div>
+
+  <div class="button-field">
+    <button class="invest" disabled>{{'Invest' | translate}}</button>
+    <button class="sold" disabled>{{ 'Sold out' | translate}}</button>
+  </div>
+
+
+
+  
+
+
+
+
+</div>

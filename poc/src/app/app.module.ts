@@ -20,6 +20,8 @@ import { PropertyCardComponent } from './components/property-list/property-card/
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LanguageInterceptor } from './interceptors/language.interceptor';
+import { PropertyImageSectionComponent } from './components/property-detail/property-image-section/property-image-section.component';
+import { PropertyTextComponent } from './components/property-detail/property-text/property-text.component';
 
 
 export function HttpLoaderFactory(http : HttpClient) {
@@ -36,6 +38,8 @@ export function HttpLoaderFactory(http : HttpClient) {
     PropertyDetailComponent,
     NavComponent,
     PropertyCardComponent,
+    PropertyImageSectionComponent,
+    PropertyTextComponent,
   ],
   imports: [
     BrowserModule,

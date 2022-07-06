@@ -1,2 +1,19 @@
-<p>property-detail works!</p>
-{{propertyData | json}}
+<div class="content-container">
+  <div
+    class="profile-info"
+  >
+    <app-property-image-section
+      class="image-container"
+      [propertyData]="propertyData"
+    >
+    </app-property-image-section>
+    <app-property-text
+      class="text-container"
+      [propertyData]="propertyData"
+    >
+    </app-property-text>
+  </div>
+
+
+
+</div>

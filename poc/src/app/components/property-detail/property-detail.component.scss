@@ -1,0 +1,27 @@
+@import '../../../styles/styles.scss';
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 4rem);
+  background: $grey-background;
+}
+
+.profile-info {
+  display: flex;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  height: 100%;
+
+  .image-container {
+    flex-basis: 66.7%;
+    padding-right: 2rem;
+    overflow: hidden;
+  }
+
+  .text-container {
+    flex-basis: 33.3%;
+  }
+
+}
+

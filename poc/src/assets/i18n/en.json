@@ -11,7 +11,15 @@
   "Project Term": "Project Term",
   "Projected Annual ROI": "Projected Annual ROI",
   "Property": "Property",
-  "Invest Now": "Invest Now"
+  "Invest Now": "Invest Now",
+
+  "Invest": "Invest",
+  "Sold out": "Sold out",
+  "Industrial": "Industrial",
+  "Primary Listing": "Primary Listing",
+  "Back to properties": "Back to properties",
+  "Book a meeting": "Book a meeting",
+  "Documents": "Documents"
 
   
 }
