@@ -6,21 +6,21 @@
 
     <div class="login-form-container">
       <div class="login-form">
-        <h2 class="login-header">Welcome back!</h2>
+        <h2 class="login-header">{{'Welcome back!' | translate}}</h2>
         <form class="form">
           <div class="form__input">
-            <label class="input-label">Email</label> <br />
+            <label class="input-label">{{ 'Email' | translate}}</label> <br />
             <input type="text" placeholder="email" [(ngModel)]="email" name="email" />
           </div>
           <div class="form__input">
-            <label class="input-label">Password</label> <br />
+            <label class="input-label">{{ 'Password' | translate }}</label> <br />
             <input type="password" placeholder="password" [(ngModel)]="password" name="password">
           </div>
           <p class="error">
             {{error}}
           </p>
           <div class="submit-button">
-            <button type="submit" (click)="onSubmit()">Login</button>
+            <button type="submit" (click)="onSubmit()">{{ 'Login' | translate }}</button>
           </div>
         </form>
       </div>

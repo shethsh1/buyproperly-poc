@@ -6,17 +6,20 @@
       </div>
 
       <ul class="nav__navigation">
-        <li><a routerLink="/properties">View Properties</a></li>
+        <li><a routerLink="/properties">{{'View Properties' | translate}} </a></li>
 
 
       </ul>
 
       <ul class="nav__account-menu">
-
-        <li *ngIf="!this.loggedIn"><a routerLink="/login">Login</a></li>
-        <li *ngIf="this.loggedIn" (click)="logout()"><a routerLink="/login">Logout</a></li>
-
-
+        <li *ngIf="!this.loggedIn"><a routerLink="/login">{{ 'Login' | translate }}</a></li>
+        <li *ngIf="this.loggedIn" (click)="logout()"><a routerLink="/login">{{ 'Logout' | translate }}</a></li>
+        <li>
+          <select class="select" (change)="changeLang($event.target)">
+            <option value="en" [selected]="lang == 'en'">English</option>
+            <option value="fr" [selected]="lang == 'fr'">French</option>
+          </select>
+        </li>
       </ul>
     </nav>
 

@@ -13,10 +13,18 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 import { loginReducer } from './core/user/user.reducer';
 import { UserEffects } from './core/user/user.effects';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { PropertyEffects } from './core/properties/property.effects';
 import { propertiesReducer } from './core/properties/property.reducer';
 import { PropertyCardComponent } from './components/property-list/property-card/property-card.component';
+import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { LanguageInterceptor } from './interceptors/language.interceptor';
+
+
+export function HttpLoaderFactory(http : HttpClient) {
+  return new TranslateHttpLoader(http)
+}
 
 
 
@@ -39,10 +47,24 @@ import { PropertyCardComponent } from './components/property-list/property-card/
       properties: propertiesReducer
     }),
     !environment.production ? StoreDevtoolsModule.instrument() : [],
-    HttpClientModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    })
   ],
 
-  providers: [],
+  providers: [
+    HttpClient, 
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: LanguageInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

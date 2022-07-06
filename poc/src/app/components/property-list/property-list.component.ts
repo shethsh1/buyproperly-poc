@@ -67,7 +67,7 @@ export class PropertyListComponent implements OnInit {
 
   setProperty(slurp : string | null) : void {
     if(slurp) {
-      this.store.dispatch(fetchProperty({ slurp }))
+      this.store?.dispatch(fetchProperty({ slurp }))
     }
   }
 

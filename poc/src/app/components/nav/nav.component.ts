@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class NavComponent implements OnInit {
 
   loggedIn! : boolean
+  lang : string = 'en';
 
   constructor(private store: Store<{ user: User }>, private router : Router) {
   }
@@ -23,11 +24,18 @@ export class NavComponent implements OnInit {
     this.store.select('user').subscribe(data => {
       this.loggedIn = data.verified
     })
+
+    this.lang = localStorage.getItem('lang') || 'en'
   }
 
   logout() {
     this.store.dispatch(logout())
     this.router.navigate(['/login'])
+  }
+
+  changeLang(lang : any) {
+    localStorage.setItem('lang', lang.value)
+    window.location.reload()
   }
 
 }
