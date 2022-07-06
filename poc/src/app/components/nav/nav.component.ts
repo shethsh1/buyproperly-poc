@@ -19,12 +19,10 @@ export class NavComponent implements OnInit {
   ngOnInit(): void {
     if(!!localStorage.getItem('token')) {
       this.store.dispatch(loginVerified())
-      this.store.select('user').subscribe(data => {
-        this.loggedIn = data.verified
-      })
-      
     }
-
+    this.store.select('user').subscribe(data => {
+      this.loggedIn = data.verified
+    })
   }
 
   logout() {
