@@ -7,8 +7,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class PropertyCardComponent implements OnInit {
   @Input() property : any;
-  @Input() notAdvertisement : any;
-  @Input() setProperty : any;
+  @Input() notAdvertisement! : (val: boolean | null) => boolean;
+  @Input() setProperty! : (slurp : string | null) => void;
 
 
   ngOnInit(): void {

@@ -1,9 +1,3 @@
-
-
-
-
-
-
 export interface Properties {
   totalCount: number,
   data: any[],

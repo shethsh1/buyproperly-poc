@@ -1,4 +1,4 @@
-import { fetchPropertiesFulfilled, fetchPropertyFulfilled } from './property.actions'
+import { fetchPropertiesFulfilled, fetchPropertyFulfilled, fetchPropertyRejected } from './property.actions'
 import { Properties, properties } from './property.state'
 import { createReducer, on } from '@ngrx/store';
 
@@ -9,5 +9,8 @@ export const propertiesReducer = createReducer(
   }),
   on(fetchPropertyFulfilled, (state, action) => {
     return { ...state, activeProperty : action.property}
+  }),
+  on(fetchPropertyRejected, (state, action) => {
+    return { ...state, activeProperty : undefined}
   })
 )

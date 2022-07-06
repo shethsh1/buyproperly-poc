@@ -23,3 +23,7 @@ export const fetchPropertyFulfilled = createAction(
   props<{ property: any }>()
 )
 
+export const fetchPropertyRejected = createAction(
+  '[Get Property Rejected] Fetch property from API not successful',
+)
+

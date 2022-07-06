@@ -26,7 +26,6 @@ export class PropertyListComponent implements OnInit {
   };
   numbers : number[] = []
 
-
   constructor(private store: Store<{ properties: Properties }>) { }
 
   ngOnInit(): void {
@@ -48,12 +47,9 @@ export class PropertyListComponent implements OnInit {
         totalPossiblePages: totalPages,
       }
     })
-
-    
-
   }
 
-  notAdvertisement(val: boolean | null) {
+  notAdvertisement(val: boolean | null) : boolean {
     if(val === true) {
       return false
     } else {
@@ -67,11 +63,12 @@ export class PropertyListComponent implements OnInit {
       this.properties.data = data.data
       this.properties.page = page
     })
-
   }
 
-  setProperty(slurp : string) {
-    this.store.dispatch(fetchProperty({ slurp }))
+  setProperty(slurp : string | null) : void {
+    if(slurp) {
+      this.store.dispatch(fetchProperty({ slurp }))
+    }
   }
 
 

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store'
 import { login } from '../../core/user/user.actions'
 import { User } from 'src/app/core/user/user.state';
-import { Observable } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -15,17 +15,15 @@ export class LoginComponent implements OnInit {
   error: string = '';
 
 
-
-
-
-
-
-
-  constructor(private store: Store<{ user: User }>) {
+  constructor(private store: Store<{ user: User }>, private router : Router) {
   }
 
   ngOnInit(): void {
-
+    this.store.select('user').subscribe((data) => {
+      if(data.verified) {
+        this.router.navigate(['/properties'])
+      }
+    })
   }
 
   onSubmit = () => {
