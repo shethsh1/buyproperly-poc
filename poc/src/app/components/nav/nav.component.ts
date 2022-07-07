@@ -45,7 +45,6 @@ export class NavComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event : any) {
     this.innerWidth = event.target.innerWidth;
-    console.log(innerWidth)
   }
 
   openSliderFunc() {

@@ -6,8 +6,14 @@
         <span>BUY PROPERLY</span>
       </div>
 
-      <ul class="nav__navigation">
+
+      <ul class="nav__navigation" *ngIf="this.loggedIn">
         <li><a routerLink="/properties">{{'View Properties' | translate}} <i class="fa fa-angle-down"></i> </a></li>
+      </ul>
+      <ul class="nav__navigation" *ngIf="!this.loggedIn">
+        <li><a >  </a></li>
+
+
       </ul>
 
       <ul class="nav__account-menu">
