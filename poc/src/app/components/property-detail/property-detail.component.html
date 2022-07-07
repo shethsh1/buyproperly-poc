@@ -1,4 +1,9 @@
-<div class="content-container">
+<div *ngIf="loading">
+  loading.....
+</div>
+
+
+<div *ngIf="!loading" class="content-container">
   <div
     class="profile-info"
   >
@@ -13,7 +18,4 @@
     >
     </app-property-text>
   </div>
-
-
-
 </div>

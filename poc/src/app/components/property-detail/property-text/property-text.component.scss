@@ -14,6 +14,9 @@
       font-size: 4rem;
       font-weight: 800;
       line-height: 1;
+      @include respond(tab-land) {
+        font-size: 3rem;
+      }
     }
     .back {
       font-size: 1.8rem;
@@ -22,6 +25,9 @@
       gap: 0.5rem;
       align-items: center;
       cursor: pointer;
+      @include respond(tab-land) {
+        font-size: 1.3rem;
+      }
     }
   }
 

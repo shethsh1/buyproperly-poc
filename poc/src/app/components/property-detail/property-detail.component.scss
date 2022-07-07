@@ -12,11 +12,19 @@
   padding-left: 2rem;
   padding-right: 2rem;
   height: 100%;
+  overflow: hidden;
+
+  @include respond(tab-land) {
+    flex-direction: column;
+  }
 
   .image-container {
     flex-basis: 66.7%;
     padding-right: 2rem;
     overflow: hidden;
+    @include respond(tab-land) {
+      padding-right: 0rem;
+    }
   }
 
   .text-container {

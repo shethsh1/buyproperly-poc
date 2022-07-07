@@ -10,11 +10,11 @@
         <form class="form">
           <div class="form__input">
             <label class="input-label">{{ 'Email' | translate}}</label> <br />
-            <input type="text" placeholder="email" [(ngModel)]="email" name="email" />
+            <input type="text" [(ngModel)]="email" name="email" />
           </div>
           <div class="form__input">
             <label class="input-label">{{ 'Password' | translate }}</label> <br />
-            <input type="password" placeholder="password" [(ngModel)]="password" name="password">
+            <input type="password" [(ngModel)]="password" name="password">
           </div>
           <p class="error">
             {{error}}

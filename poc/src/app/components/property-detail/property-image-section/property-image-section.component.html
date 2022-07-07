@@ -1,26 +1,36 @@
+
 <div class="images">
   <div class="gallery">
-    <div class="main-image">
-      <img [src]="propertyData.img_src_main">
+    <div #carousel class="main-image" >
+      <img data-active [src]="propertyData.images[this.currentIndex]">
+      <img data-right [src]="getImage(this.currentIndex + 1)">
+      <img data-left [src]="getImage(this.currentIndex - 1)">
+
     </div>
+    <i (click)="incrementIndex()" class="right-arrow fa fa-arrow-circle-right"></i>
+    <i (click)="decrementIndex()" class="left-arrow fa fa-arrow-circle-left"></i>
+
   </div>
 
   <div class="secondary">
     <div>
-      <img [src]="propertyData.img_src_main">
+      <img [src]="propertyData.images[this.currentIndex % this.propertyData.images.length]">
     </div>
 
     <div>
-      <img [src]="propertyData.img_src_main">
+      <img [src]="propertyData.images[(this.currentIndex + 1) % this.propertyData.images.length]">
     </div>
 
     <div>
-      <img [src]="propertyData.img_src_main">
+      <img [src]="propertyData.images[(this.currentIndex + 2) % this.propertyData.images.length]">
     </div>
 
     <div>
-      <img [src]="propertyData.img_src_main">
+      <img [src]="propertyData.images[(this.currentIndex + 3) % this.propertyData.images.length]">
     </div>
   </div>
+
+
+
 
 </div>

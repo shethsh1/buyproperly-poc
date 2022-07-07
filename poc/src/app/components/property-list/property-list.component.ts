@@ -3,11 +3,14 @@ import { fetchProperties, fetchProperty } from 'src/app/core/properties/property
 import { Store } from '@ngrx/store'
 import { Properties } from 'src/app/core/properties/property.state';
 
-interface CurrentProperties extends Properties {
+interface CurrentProperties {
   page : number,
   totalPossiblePages: number,
   limit: number,
-  offset: number
+  offset: number,
+  data: any[],
+  totalCount: number,
+
 }
 
 @Component({

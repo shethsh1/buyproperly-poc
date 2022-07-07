@@ -13,10 +13,21 @@
   align-items: center;
   padding: 2rem;
 
+  @include respond(phone) {
+    flex-direction: column;
+  }
+
+
   .login-banner {
     flex: 1;
     display: flex;
     justify-content: center;
+    align-self: stretch;
+    align-items: center;
+
+    @include respond(phone) {
+      display: none;
+    }
 
     &>img {
       object-fit: contain;
@@ -24,9 +35,7 @@
       max-width: 100%;
       max-width: 80%;
 
-      @include respond(desktop) {
-        max-width: 50%;
-      }
+
     }
   }
 
@@ -36,36 +45,52 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-self: stretch;
+    align-items: center;
 
     .login-form {
       box-shadow: 3px 3px 32px rgb(0 0 0 / 19%);
       background: #fff;
       width: 100%;
-      max-width: 40%;
+      max-width: 50%;
+      margin-top: 3.1875rem;
+      margin-bottom: 3rem;
+      padding: 1.5rem 3.1875rem 1.5rem 3rem;
 
-      @media screen and (max-width: 1600px) {
-        max-width: 50%;
+      @include respond(xl) {
+        max-width: 70%;
       }
 
       @include respond(desktop) {
-        max-width: 60%;
+        max-width: 80%;
       }
 
-      padding: 1.5rem 3.1875rem 1.5rem 3rem;
+      @include respond(tab-port) {
+        max-width: 100%;
+      }
+
+
+      
 
       .form {
         margin-top: 1rem;
         display: flex;
         flex-direction: column;
         gap: 2rem;
+        margin-top: 4rem;
       }
 
       h2 {
-        font-size: 2.5rem;
+        font-size: 3.2rem;
         line-height: 2.5rem;
-        font-weight: 700;
+        font-weight: 800;
         margin-bottom: 2rem;
         margin-top: 4rem;
+        font-family: Poppins,sans-serif!important;
+
+        @include respond(phone) {
+          font-size: 2.8rem;
+        }
       }
 
       .submit-button {
@@ -73,20 +98,26 @@
         justify-content: center;
 
         button {
-          height: 2.875rem;
+          height: 4.6rem;
           border-radius: 7px;
           padding-left: 38px;
           padding-right: 38px;
           background-color: $yellow-main;
           cursor: pointer;
+          font-weight: 700;
+          border: none;
+
 
           &:hover {
-            background-color: #fff;
+            box-shadow:
+            1px 1px #53a7ea,
+            2px 2px #53a7ea,
+            3px 3px #53a7ea;
+    -webkit-transform: translateX(-3px);
+    transform: translateX(-3px);
           }
 
         }
-
-
 
       }
 
@@ -95,31 +126,17 @@
       }
     }
 
-
-
-
-
-
   }
 }
 
-
-/* 
-
-- Make into a new component later
-
-*/
-
-
 .form__input {
 
-
-
   .input-label {
-    font-size: 1.25rem;
+    font-size: 1.8rem;
     font-weight: 700;
     padding-left: 0.5rem;
     display: block;
+
   }
 
   &>input {
@@ -131,8 +148,8 @@
     background-color: #f4f4f4;
     --bg-opacity: 1;
     border-radius: 1.5rem;
-    height: 3rem;
-    font-size: 0.875rem;
+    height: 4rem;
+    font-size: 1.4rem;
     line-height: 2;
     padding-left: 1rem;
     border: none;

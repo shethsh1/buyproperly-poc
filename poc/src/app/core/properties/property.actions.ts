@@ -23,6 +23,10 @@ export const fetchPropertyFulfilled = createAction(
   props<{ property: any }>()
 )
 
+export const fetchPropertyLoading = createAction(
+  '[Get Property Loading] Fetch property from API is loading',
+)
+
 export const fetchPropertyRejected = createAction(
   '[Get Property Rejected] Fetch property from API not successful',
 )
