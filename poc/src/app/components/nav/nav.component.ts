@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store'
 import { logout, loginVerified } from '../../core/user/user.actions'
 import { User } from 'src/app/core/user/user.state';
@@ -13,11 +13,13 @@ export class NavComponent implements OnInit {
 
   loggedIn! : boolean
   lang : string = 'en';
+  innerWidth! : number;
 
   constructor(private store: Store<{ user: User }>, private router : Router) {
   }
 
   ngOnInit(): void {
+    this.innerWidth = window.innerWidth;
     if(!!localStorage.getItem('token')) {
       this.store.dispatch(loginVerified())
     }
@@ -36,6 +38,12 @@ export class NavComponent implements OnInit {
   changeLang(lang : any) {
     localStorage.setItem('lang', lang.value)
     window.location.reload()
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event : any) {
+    this.innerWidth = event.target.innerWidth;
+    console.log(innerWidth)
   }
 
 }

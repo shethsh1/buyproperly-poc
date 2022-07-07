@@ -1,17 +1,18 @@
 <section class="main-padding">
   <div class="header-container">
     <nav class="nav">
-      <div class="logo">
-        BUY PROPERLY
+      <div class="logo" routerLink="/login">
+        <i class="fa fa-home"></i>
+        <span>BUY PROPERLY</span>
       </div>
 
       <ul class="nav__navigation">
-        <li><a routerLink="/properties">{{'View Properties' | translate}} </a></li>
+        <li><a routerLink="/properties">{{'View Properties' | translate}} <i class="fa fa-angle-down"></i> </a></li>
       </ul>
 
       <ul class="nav__account-menu">
-        <li *ngIf="!this.loggedIn"><a routerLink="/login">{{ 'Login' | translate }}</a></li>
-        <li *ngIf="this.loggedIn" (click)="logout()"><a routerLink="/login">{{ 'Logout' | translate }}</a></li>
+        <li *ngIf="!this.loggedIn"><button routerLink="/login">{{ 'Login' | translate }}</button></li>
+        <li *ngIf="this.loggedIn" (click)="logout()"><button routerLink="/login">{{ 'Logout' | translate }}</button></li>
         <li>
           <select class="select" (change)="changeLang($event.target)">
             <option value="en" [selected]="lang == 'en'">English</option>
@@ -20,6 +21,13 @@
         </li>
       </ul>
     </nav>
+
+    <div *ngIf="this.innerWidth <= 900" class="hamburger-menu">
+      <div>
+        <i class="fa fa-bars"></i>
+      </div>
+
+    </div>
 
   </div>
 </section>
