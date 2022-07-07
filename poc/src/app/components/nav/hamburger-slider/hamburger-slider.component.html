@@ -1,0 +1,20 @@
+
+
+
+<div [ngClass]="openSlider ? 'slider' : 'slider__close'">
+
+  <div class="slider__header">
+    <div (click)="this.closeSliderFunc.emit()">
+      <i class="fa fa-x"></i>
+    </div>
+  </div>
+
+  <ul class="slider__navigation">
+    <li routerLink="/properties">{{'View Properties' | translate}}</li>
+    <li *ngIf="this.loggedIn" (click)="this.logout.emit()" routerLink="/login">{{'Logout' | translate}}</li>
+    <li *ngIf="!this.loggedIn" routerLink="/login">{{'Login' | translate}}</li>
+
+    
+  </ul>
+
+</div>

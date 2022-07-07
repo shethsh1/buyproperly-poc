@@ -14,6 +14,8 @@ export class NavComponent implements OnInit {
   loggedIn! : boolean
   lang : string = 'en';
   innerWidth! : number;
+  openSlider : boolean = false;
+
 
   constructor(private store: Store<{ user: User }>, private router : Router) {
   }
@@ -44,6 +46,14 @@ export class NavComponent implements OnInit {
   onResize(event : any) {
     this.innerWidth = event.target.innerWidth;
     console.log(innerWidth)
+  }
+
+  openSliderFunc() {
+    this.openSlider = true
+  }
+
+  closeSliderFunc() {
+    this.openSlider = false
   }
 
 }

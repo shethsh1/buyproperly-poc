@@ -22,12 +22,23 @@
       </ul>
     </nav>
 
-    <div *ngIf="this.innerWidth <= 900" class="hamburger-menu">
+    <div *ngIf="this.innerWidth <= 900" class="hamburger-menu" (click)="openSliderFunc()">
       <div>
         <i class="fa fa-bars"></i>
       </div>
-
     </div>
+
+    <app-hamburger-slider 
+
+      [openSlider]="openSlider"
+      (closeSliderFunc)="closeSliderFunc()"
+      [loggedIn]="loggedIn"
+      (logout)="logout()"
+    >
+    </app-hamburger-slider>
+
+
+
 
   </div>
 </section>

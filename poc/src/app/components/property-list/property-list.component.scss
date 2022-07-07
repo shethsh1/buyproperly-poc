@@ -13,8 +13,10 @@
   background: $grey-background;
   padding: 2rem;
   grid-gap: 2rem;
+  padding-left: 4rem;
   @include respond(phone) {
     margin-left: 0rem;
+    padding-left: 2rem;
   }
 
 }
